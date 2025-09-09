@@ -1,0 +1,58 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="main-content-wrapper">
+            <div class="form-column">
+                <form id="schema-form">
+                    <div class="form-group">
+                        <label for="pageUrl">URL страницы</label>
+                        <input type="url" id="pageUrl" name="pageUrl" placeholder="https://example.com/path/to/article.html" required>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="headline">Заголовок статьи и описание</label>
+                            <input type="text" id="headline" name="headline" placeholder="Например: Как ребёнку научиться самоорганизации" required>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="description" name="description" rows="4" placeholder="Введите краткое описание статьи..." required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">URL изображения</label>
+                        <input type="url" id="image" name="image" placeholder="https://example.com/path/to/image.jpg" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="datePublished">Дата публикации</label>
+                            <input type="date" id="datePublished" name="datePublished" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timePublished">Время публикации</label>
+                            <input type="time" id="timePublished" name="timePublished" value="09:00" required>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div style="display:flex; flex-direction:column; gap:8px">
+                     <button type="button" id="generateBreadcrumbBtn">Cгенерировать BreadcrumbList JSON-LD</button>
+                    <p class="error" id="fetchError"></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="result-column">
+                <div id="result-container">
+                    <button id="copy-button">Копировать</button>
+                    <pre><code id="output-code"></code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
