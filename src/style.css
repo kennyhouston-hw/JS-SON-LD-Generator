@@ -70,7 +70,8 @@ body {
     input[type="url"],
     input[type="date"],
     input[type="time"],
-    textarea {
+    textarea,
+    select {
         width: 100%;
         padding: 12px;
         border: 2px solid transparent;

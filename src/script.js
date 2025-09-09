@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const headlineInput = document.getElementById('headline');
     const descriptionTextarea = document.getElementById('description');
     const imageInput = document.getElementById('image');
+    const authorTypeInput = document.getElementById('authorType');
+    const authorNameInput = document.getElementById('authorName');
+    const authorUrlInput = document.getElementById('authorUrl');
     const datePublishedInput = document.getElementById('datePublished');
     const timePublishedInput = document.getElementById('timePublished');
 
@@ -21,12 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     datePublishedInput.value = today;
     timePublishedInput.value = currentTime;
 
+    authorNameInput.value = "Hello World";
+    authorUrlInput.value = "https://hwschool.online/";
+
     const prefilledData = {
-        author: {
-            "@type": "Organization",
-            "name": "Hello World",
-            "url": "https://hwschool.online/"
-        },
         publisher: {
             "@type": "Organization",
             "name": "Hello World",
@@ -45,6 +46,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const headline = headlineInput.value;
         const description = descriptionTextarea.value;
         const image = imageInput.value;
+
+        const authorType = authorTypeInput.value;
+        const authorName = authorNameInput.value;
+        const authorUrl = authorUrlInput.value;
+
+        const author = {
+            "@type": authorType,
+            "name": authorName
+        };
+        if (authorUrl) {
+            author.url = authorUrl;
+        }
 
         const date = datePublishedInput.value;
         const time = timePublishedInput.value;
@@ -67,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "headline": headline,
             "description": description,
             "image": image,
-            "author": prefilledData.author,
+            "author": author,
             "publisher": prefilledData.publisher,
             "datePublished": formattedDatePublished
         };
@@ -124,8 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         const wrapperDiv = li.querySelector('.t758__link-item__wrapper');
                         if (wrapperDiv) {
                             itemData.name = wrapperDiv.textContent.trim();
-                        } else {
-                            itemData.name = "Неизвестный элемент";
                         }
                     }
                 }
@@ -215,6 +226,9 @@ document.addEventListener('DOMContentLoaded', () => {
     headlineInput.addEventListener('input', updateOverallOutput);
     descriptionTextarea.addEventListener('input', updateOverallOutput);
     imageInput.addEventListener('input', updateOverallOutput);
+    authorTypeInput.addEventListener('input', updateOverallOutput);
+    authorNameInput.addEventListener('input', updateOverallOutput);
+    authorUrlInput.addEventListener('input', updateOverallOutput);
     datePublishedInput.addEventListener('input', updateOverallOutput);
     timePublishedInput.addEventListener('input', updateOverallOutput);
 
