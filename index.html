@@ -33,13 +33,11 @@
                     <hr>
 
                     <div class="form-group">
-                        <label>Тип автора</label>
-                        <div class="segmented-control">
-                            <input type="radio" id="authorTypeOrganization" name="authorType" value="Organization" checked>
-                            <label for="authorTypeOrganization">Organization</label>
-                            <input type="radio" id="authorTypePerson" name="authorType" value="Person">
-                            <label for="authorTypePerson">Person</label>
-                        </div>
+                        <label for="authorType">Тип автора</label>
+                        <select id="authorType" name="authorType">
+                            <option value="Organization" selected>Organization</option>
+                            <option value="Person">Person</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="authorName">Имя автора</label>

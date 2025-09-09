@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const headlineInput = document.getElementById('headline');
     const descriptionTextarea = document.getElementById('description');
     const imageInput = document.getElementById('image');
+    const authorTypeInput = document.getElementById('authorType');
     const authorNameInput = document.getElementById('authorName');
     const authorUrlInput = document.getElementById('authorUrl');
     const datePublishedInput = document.getElementById('datePublished');
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const description = descriptionTextarea.value;
         const image = imageInput.value;
 
-        const authorType = document.querySelector('input[name="authorType"]:checked').value;
+        const authorType = authorTypeInput.value;
         const authorName = authorNameInput.value;
         const authorUrl = authorUrlInput.value;
 
@@ -225,9 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
     headlineInput.addEventListener('input', updateOverallOutput);
     descriptionTextarea.addEventListener('input', updateOverallOutput);
     imageInput.addEventListener('input', updateOverallOutput);
-    document.querySelectorAll('input[name="authorType"]').forEach(radio => {
-        radio.addEventListener('change', updateOverallOutput);
-    });
+    authorTypeInput.addEventListener('input', updateOverallOutput);
     authorNameInput.addEventListener('input', updateOverallOutput);
     authorUrlInput.addEventListener('input', updateOverallOutput);
     datePublishedInput.addEventListener('input', updateOverallOutput);
