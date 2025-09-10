@@ -114,6 +114,7 @@ body {
         background-color: var(--input-background-color);
         color:var(--text-color);
         border-radius: var(--border-radius-s);
+        font-family: var(--font-family);
         box-sizing: border-box;
         font-family: inherit;
         font-size: 0.875rem;
