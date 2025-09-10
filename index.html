@@ -23,23 +23,20 @@
                         <div class="form-group">
                             <input type="url" id="image" name="image" placeholder="URL изображения" required>
                         </div>
+                        <div class="form-group">
+                            <select id="authorType" name="authorType">
+                                <option value="Organization" selected>Organization</option>
+                                <option value="Person">Person</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="authorName" name="authorName" placeholder="Например: Hello World" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="url" id="authorUrl" name="authorUrl" placeholder="https://hwschool.online/">
+                        </div>
                     </div>
 
-                    <hr>
-                    <div class="form-col">
-                    <div class="form-group">
-                        <select id="authorType" name="authorType">
-                            <option value="Organization" selected>Organization</option>
-                            <option value="Person">Person</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="authorName" name="authorName" placeholder="Например: Hello World" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="url" id="authorUrl" name="authorUrl" placeholder="https://hwschool.online/">
-                    </div>
-                    </div>
                     <hr>
                     <div class="form-row">
                         <div class="form-group">
@@ -54,6 +51,7 @@
                     <hr>
                     <div style="display:flex; flex-direction:column; gap:8px">
                      <button type="button" id="generateBreadcrumbBtn">Cгенерировать BreadcrumbList JSON-LD</button>
+                     <button class="button" id="copy-button">Копировать</button>
                     <p class="error" id="fetchError"></p>
                     </div>
                 </form>
@@ -61,7 +59,6 @@
 
             <div class="result-column">
                 <div id="result-container">
-                    <button class="button" id="copy-button">Копировать</button>
                     <pre><code id="output-code"></code></pre>
                 </div>
             </div>
