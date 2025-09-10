@@ -87,7 +87,7 @@ body {
     textarea,
     select {
         width: 100%;
-        padding: 6px 12px;
+        padding: 6px 10px;
         border: 2px solid transparent;
         background-color: var(--input-background-color);
         color:var(--text-color);
@@ -97,6 +97,7 @@ body {
         font-size: 0.875rem;
         line-height: 1.25rem;
         transition: border-color 0.3s;
+        min-height: 38px;
     }
 
     .btn {
@@ -106,6 +107,7 @@ body {
         border-radius: var(--border-radius-s);
         justify-content: center;
         cursor: pointer;
+        min-height: 38px;
         font-size: 0.875rem;
         line-height: 1.25rem;
         transition: background-color 0.3s;
