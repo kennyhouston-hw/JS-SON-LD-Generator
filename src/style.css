@@ -112,12 +112,12 @@ body {
     }
 
     .btn-primary {
-        background-color: var(--secondary-button-color);
+        background-color: var(--primary-button-color);
         color: var(--text-color);
     }
 
     .btn-primary:hover {
-        background-color: rgb(25, 136, 255);
+        background-color: var(--primary-button-hover-color);
     }
 
     .btn-secondary {
@@ -126,7 +126,7 @@ body {
     }
 
     .btn-secondary:hover {
-        background-color: rgb(25, 136, 255);
+        background-color: var(--secondary-button-hover-color);
     }
 
     #result-container {
