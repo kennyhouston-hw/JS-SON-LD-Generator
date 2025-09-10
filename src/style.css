@@ -71,6 +71,7 @@ body {
         font-family: var(--font-family);
         color: var(--text-color);
         opacity: 0.6;
+        letter-spacing: 0.5px;
     }
 
     .form-row {
@@ -123,6 +124,7 @@ body {
         font-family: inherit;
         font-size: 0.875rem;
         line-height: 1.25rem;
+        letter-spacing: 0.5px;
         transition: border-color 0.3s;
         min-height: 38px;
     }
@@ -226,6 +228,7 @@ body {
         text-align: center;
         font-size: 0.875rem;
         line-height: 1.25rem;
+        letter-spacing: 0.5px;
     }
 
     hr {
