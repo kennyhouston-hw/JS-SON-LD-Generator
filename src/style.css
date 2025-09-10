@@ -147,6 +147,11 @@ body {
         background-color: var(--primary-button-hover-color);
     }
 
+    .btn-primary::before {
+        content: '📋';
+        margin-right: 8px;
+    }
+
     .btn-secondary {
         background-color: var(--secondary-button-color);
         color: var(--text-color);
@@ -154,6 +159,11 @@ body {
 
     .btn-secondary:hover {
         background-color: var(--secondary-button-hover-color);
+    }
+
+    .btn-secondary::before {
+        content: '➕';
+        margin-right: 8px;
     }
 
     #result-container {
