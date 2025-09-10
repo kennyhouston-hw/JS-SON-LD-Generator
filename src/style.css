@@ -17,7 +17,7 @@
     }
 
 body {
-        font-family: 'Manrope', sans-serif;
+        font-family: var(--font-family);
         line-height: 1.6;
         background-color: var(--background-page-color);
         color: var(--text-color);
@@ -48,6 +48,25 @@ body {
         flex-direction: column;
         padding: 40px;
         background-color: var(--surface-color);
+    }
+
+    .h1 {
+        font-size: 2rem;
+        line-height: 1;
+        font-weight: 400;
+        margin: 0;
+        font-family: var(--font-family);
+        color: var(--text-color);
+        
+    }
+    
+    .subtitle {
+        font-size: 0.875rem;
+        line-height: 1.25;
+        font-weight: 300;
+        font-family: var(--font-family);
+        color: var(--text-color);
+        opacity: 0.6;
     }
 
     .form-row {
