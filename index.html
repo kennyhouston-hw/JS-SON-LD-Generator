@@ -11,36 +11,31 @@
             <div class="form-column">
                 <form id="schema-form">
                     <div class="form-group">
-                        <label for="pageUrl">URL страницы</label>
                         <input type="url" id="pageUrl" name="pageUrl" placeholder="https://example.com/path/to/article.html" required>
                     </div>
                     <div class="form-col">
                         <div class="form-group">
-                            <label for="headline">Заголовок статьи и описание</label>
-                            <input type="text" id="headline" name="headline" placeholder="Например: Как ребёнку научиться самоорганизации" required>
+                            <input type="text" id="headline" name="headline" placeholder="Заголовок статьи" required>
                         </div>
 
                         <div class="form-group">
-                            <textarea id="description" name="description" rows="4" placeholder="Введите краткое описание статьи..." required></textarea>
+                            <textarea id="description" name="description" rows="4" placeholder="Описание статьи..." required></textarea>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="image">URL изображения</label>
-                        <input type="url" id="image" name="image" placeholder="https://example.com/path/to/image.jpg" required>
+                        <input type="url" id="image" name="image" placeholder="URL изображения" required>
                     </div>
 
                     <hr>
 
                     <div class="form-group">
-                        <label for="authorType">Тип автора</label>
                         <select id="authorType" name="authorType">
                             <option value="Organization" selected>Organization</option>
                             <option value="Person">Person</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="authorName">Имя автора</label>
                         <input type="text" id="authorName" name="authorName" placeholder="Например: Hello World" required>
                     </div>
                     <div class="form-group">
@@ -50,12 +45,10 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="datePublished">Дата публикации</label>
                             <input type="date" id="datePublished" name="datePublished" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="timePublished">Время публикации</label>
                             <input type="time" id="timePublished" name="timePublished" value="09:00" required>
                         </div>
                     </div>
