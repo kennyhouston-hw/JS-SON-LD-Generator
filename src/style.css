@@ -83,13 +83,14 @@ body {
 
     button {
         background-color: #0A84FF;
-        color: white;
-        padding: 12px 20px;
+        color: #e3e3e3;
+        padding: 6px 12px;
         border: none;
-        border-radius: 99px;
+        border-radius: 8px;
+        justify-content: center;
         cursor: pointer;
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
         transition: background-color 0.3s;
     }
 
@@ -109,16 +110,8 @@ body {
 
     #copy-button {
         position: absolute;
-        top: 20px;
-        right: 24px;
-        background-color: #0A84FF;
-        padding: 12px 20px;
-        font-size: 14px;
-        border: 2px solid transparent;
-    }
-
-    #copy-button:hover {
-        background-color: rgb(25, 136, 255);
+        top: 0px;
+        right: 0px;
     }
 
     pre {
@@ -164,6 +157,6 @@ body {
 
     hr {
         border: 0;
-        border-top: 1px solid #eee;
+        border-top: 1px solid #444746;
         margin: 0px 0;
     }
