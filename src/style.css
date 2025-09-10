@@ -82,7 +82,7 @@ body {
     }
 
     button {
-        background-color: #007bff;
+        background-color: #0A84FF;
         color: white;
         padding: 12px 20px;
         border: none;
@@ -94,7 +94,7 @@ body {
     }
 
     button:hover {
-        background-color: #0056b3;
+        background-color: rgb(25, 136, 255);
     }
 
     #result-container {
@@ -118,7 +118,7 @@ body {
     }
 
     #copy-button:hover {
-        background-color: #007AFF;
+        background-color: rgb(25, 136, 255);
     }
 
     pre {
