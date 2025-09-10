@@ -186,9 +186,10 @@ body {
     }
 
     .error {
-        color: red;
+        color: rgb(207, 49, 49);
         font-size: 0.9em;
         margin-top: 5px;
+        text-align: center;
     }
 
     hr {
