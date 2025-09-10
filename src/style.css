@@ -1,8 +1,9 @@
 :root {
         --primary-button-color: #0A84FF;
-        --background-page-color: #131314;
+        --background-page-color:#111111;
+        --surface-color: #131314;
         --text-color: #e3e3e3;
-        --surface-background-color: #1b1b1b;
+        --input-background-color: #1b1b1b;
         --border-radius-s: 8px;
         --border-color: #444746;
         --font-family: 'Manrope', sans-serif;
@@ -40,6 +41,7 @@ body {
         display: flex;
         flex-direction: column;
         padding: 40px;
+        background-color: var(--surface-color);
     }
 
     .form-row {
@@ -84,7 +86,7 @@ body {
         width: 100%;
         padding: 6px 12px;
         border: 2px solid transparent;
-        background-color: var(--surface-background-color);
+        background-color: var(--input-background-color);
         color:var(--text-color);
         border-radius: var(--border-radius-s);
         box-sizing: border-box;
