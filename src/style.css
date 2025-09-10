@@ -100,7 +100,6 @@ body {
     }
 
     .btn {
-        background-color: var(--primary-button-color);
         color: var(--text-color);
         padding: 6px 12px;
         border: none;
@@ -113,7 +112,7 @@ body {
     }
 
     .btn-primary {
-        background-color: var(--primary-button-color);
+        background-color: var(--secondary-button-color);
         color: var(--text-color);
     }
 
@@ -122,7 +121,7 @@ body {
     }
 
     .btn-secondary {
-        background-color: var(--primary-button-color);
+        background-color: var(--secondary-button-hover-color);
         color: var(--text-color);
     }
 
