@@ -1,19 +1,15 @@
 body {
         font-family: 'Manrope', sans-serif;
         line-height: 1.6;
-        background-color: #f5f6f7;
-        color: #00;
-        max-width: 1200px;
+        background-color: #131314;
+        color: #e3e3e3;
         margin: 40px auto !important;
         padding: 20px;
         width: 100%
     }
 
     .container {
-        background-color: #ffffff;
-        padding: 16px;
         margin: 40px auto;
-        border-radius: 32px;
         width: fit-content;
     }
 
