@@ -123,7 +123,7 @@ body {
     }
 
     .btn-secondary {
-        background-color: var(--secondary-button-hover-color);
+        background-color: var(--secondary-button-color);
         color: var(--text-color);
     }
 
