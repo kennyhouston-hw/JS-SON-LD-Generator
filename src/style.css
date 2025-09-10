@@ -99,7 +99,7 @@ body {
         transition: border-color 0.3s;
     }
 
-    btn {
+    .btn {
         background-color: var(--primary-button-color);
         color: var(--text-color);
         padding: 6px 12px;
@@ -112,21 +112,21 @@ body {
         transition: background-color 0.3s;
     }
 
-    btn-primary {
+    .btn-primary {
         background-color: var(--primary-button-color);
         color: var(--text-color);
     }
 
-    btn-primary:hover {
+    .btn-primary:hover {
         background-color: rgb(25, 136, 255);
     }
 
-    btn-secondary {
+    .btn-secondary {
         background-color: var(--primary-button-color);
         color: var(--text-color);
     }
 
-    btn-secondary:hover {
+    .btn-secondary:hover {
         background-color: rgb(25, 136, 255);
     }
 
