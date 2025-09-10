@@ -69,13 +69,16 @@ body {
     textarea,
     select {
         width: 100%;
-        padding: 12px;
+        padding: 6px 12px;
         border: 2px solid transparent;
-        background-color: #f7f7f7;
-        border-radius: 12px;
+        background-color: #1b1b1b;
+        color:#e3e3e3;
+        border-radius: 8px;
         box-sizing: border-box;
         font-family: inherit;
-        font-size: 1rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        transition: border-color 0.3s;
     }
 
     button {
@@ -119,10 +122,7 @@ body {
     }
 
     pre {
-        background-color: #000;
-        color: #abb2bf;
-        padding: 20px;
-        border-radius: 12px;
+        color: #e3e3e3;
         white-space: pre-wrap;
         word-wrap: break-word;
         font-family: "Courier New", Courier, monospace;
