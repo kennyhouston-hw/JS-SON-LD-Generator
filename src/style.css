@@ -1,9 +1,12 @@
 :root {
         --primary-button-color: #0A84FF;
+        --primary-button-hover-color: #006FDD;
+        --secondary-button-color: #1A1A1A;
+        --secondary-button-hover-color: #333333;
         --background-page-color:#111111;
         --surface-color: #131314;
         --text-color: #e3e3e3;
-        --input-background-color: #1b1b1b;
+        --input-background-color: #1A1A1A;
         --border-radius-s: 8px;
         --border-color: #444746;
         --font-family: 'Manrope', sans-serif;
@@ -96,7 +99,7 @@ body {
         transition: border-color 0.3s;
     }
 
-    button {
+    btn {
         background-color: var(--primary-button-color);
         color: var(--text-color);
         padding: 6px 12px;
@@ -109,7 +112,21 @@ body {
         transition: background-color 0.3s;
     }
 
-    button:hover {
+    btn-primary {
+        background-color: var(--primary-button-color);
+        color: var(--text-color);
+    }
+
+    btn-primary:hover {
+        background-color: rgb(25, 136, 255);
+    }
+
+    btn-secondary {
+        background-color: var(--primary-button-color);
+        color: var(--text-color);
+    }
+
+    btn-secondary:hover {
         background-color: rgb(25, 136, 255);
     }
 
