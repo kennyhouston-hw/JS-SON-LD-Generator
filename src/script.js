@@ -24,9 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     datePublishedInput.value = today;
     timePublishedInput.value = currentTime;
 
-    authorNameInput.value = "Hello World";
-    authorUrlInput.value = "https://hwschool.online/";
-
+    // Предзаполненные данные для publisher
     const prefilledData = {
         publisher: {
             "@type": "Organization",
