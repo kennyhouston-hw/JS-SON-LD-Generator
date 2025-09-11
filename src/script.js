@@ -19,10 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Устанавливаем текущую дату и время по умолчанию при загрузке страницы
     const now = new Date();
     const today = now.toISOString().split('T')[0]; // YYYY-MM-DD
-    const currentTime = now.toTimeString().split(' ')[0].substring(0, 5); // HH:MM
-
     datePublishedInput.value = today;
-    timePublishedInput.value = currentTime;
+    timePublishedInput.value = '08:00'; // Устанавливаем время по умолчанию 08:00
 
     authorNameInput.value = "Hello World";
     authorUrlInput.value = "https://hwschool.online/";
@@ -188,6 +186,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const metaDescription = doc.querySelector('meta[name="description"]');
             descriptionTextarea.value = metaDescription ? metaDescription.getAttribute('content').trim() : '';
+
+            // --- Логика определения даты публикации ---
+            const dateElement = doc.querySelector('span.date-text.date-icon-calendar');
+            if (dateElement) {
+                const dateText = dateElement.textContent.trim(); // e.g., "14.08.2024"
+                const parts = dateText.split('.');
+                if (parts.length === 3) {
+                    const [day, month, year] = parts;
+                    // Преобразуем формат ДД.ММ.ГГГГ в ГГГГ-ММ-ДД для input[type="date"]
+                    datePublishedInput.value = `${year}-${month}-${day}`;
+                }
+            }
+            // Если элемент не найден, дата останется сегодняшней (установлена по умолчанию).
 
             // --- Логика определения автора ---
             const authorBlock = doc.querySelector('.t531');
