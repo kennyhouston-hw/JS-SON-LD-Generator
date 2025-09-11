@@ -180,7 +180,7 @@ body {
         background-color: var(--secondary-button-hover-color);
     }
 
-    .btn-secondary .add::before {
+    .add::before {
         content: '➕';
         margin-right: 8px;
     }
