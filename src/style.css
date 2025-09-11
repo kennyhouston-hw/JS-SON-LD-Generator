@@ -180,8 +180,13 @@ body {
         background-color: var(--secondary-button-hover-color);
     }
 
-    .btn-secondary::before {
+    .btn-secondary .add::before {
         content: '➕';
+        margin-right: 8px;
+    }
+
+    .btn-secondary .clear::before {
+        content: '';
         margin-right: 8px;
     }
 
