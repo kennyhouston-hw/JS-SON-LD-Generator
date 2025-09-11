@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // НОВАЯ ФУНКЦИЯ: для автоматического заполнения полей headline и description
+    // ОБНОВЛЕННАЯ ФУНКЦИЯ: для автоматического заполнения полей headline, description и автора
     async function populateHeadlineAndDescription(url) {
         if (!url) {
             headlineInput.value = '';
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(url);
+            const response = await fetch(url); // Используем стандартный fetch
             if (!response.ok) {
                 throw new Error(`Ошибка HTTP! Статус: ${response.status}`);
             }
@@ -182,26 +182,39 @@ document.addEventListener('DOMContentLoaded', () => {
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
 
+            // --- Заполнение Заголовка и Описания ---
             const title = doc.querySelector('title');
-            if (title) {
-                headlineInput.value = title.textContent.trim();
-            } else {
-                headlineInput.value = ''; // Очищаем, если не найдено
-            }
+            headlineInput.value = title ? title.textContent.trim() : '';
 
             const metaDescription = doc.querySelector('meta[name="description"]');
-            if (metaDescription) {
-                descriptionTextarea.value = metaDescription.getAttribute('content').trim();
+            descriptionTextarea.value = metaDescription ? metaDescription.getAttribute('content').trim() : '';
+
+            // --- Логика определения автора ---
+            const authorBlock = doc.querySelector('.t531');
+            if (authorBlock) {
+                // Блок найден, устанавливаем автора как Person
+                authorTypeInput.value = 'Person';
+                const authorNameElement = authorBlock.querySelector('.t531__title');
+                authorNameInput.value = authorNameElement ? authorNameElement.textContent.trim() : '';
+                authorUrlInput.value = ''; // Очищаем URL для Person
             } else {
-                descriptionTextarea.value = ''; // Очищаем, если не найдено
+                // Блок не найден, устанавливаем автора как Organization
+                authorTypeInput.value = 'Organization';
+                authorNameInput.value = 'Hello World';
+                authorUrlInput.value = 'https://hwschool.online/';
             }
 
             fetchError.textContent = ''; // Очищаем ошибки, если все успешно
         } catch (error) {
             console.error('Ошибка при загрузке страницы для автозаполнения:', error);
             fetchError.textContent = `Ошибка автозаполнения: ${error.message}. Убедитесь, что URL корректен и доступен.`;
-            headlineInput.value = ''; // Очищаем поля при ошибке
+            // Очищаем поля при ошибке
+            headlineInput.value = '';
             descriptionTextarea.value = '';
+            // Сбрасываем автора к организации по умолчанию
+            authorTypeInput.value = 'Organization';
+            authorNameInput.value = 'Hello World';
+            authorUrlInput.value = 'https://hwschool.online/';
         }
     }
 
@@ -232,12 +245,14 @@ document.addEventListener('DOMContentLoaded', () => {
     datePublishedInput.addEventListener('input', updateOverallOutput);
     timePublishedInput.addEventListener('input', updateOverallOutput);
 
-    // Управляем полями автора в зависимости от выбора типа
+    // Управляем полями автора в зависимости от ручного выбора типа (для возможности переопределения)
     authorTypeInput.addEventListener('change', () => {
         if (authorTypeInput.value === 'Organization') {
             authorNameInput.value = "Hello World";
             authorUrlInput.value = "https://hwschool.online/";
         } else if (authorTypeInput.value === 'Person') {
+            // При ручном выборе "Person" просто очищаем поля,
+            // т.к. имя нужно вводить вручную, если оно не было определено автоматически.
             authorNameInput.value = '';
             authorUrlInput.value = '';
         }
