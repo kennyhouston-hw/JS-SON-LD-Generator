@@ -135,6 +135,9 @@ body {
         appearance:none;
    }
 
+     #datePublished, #timePublished {
+        color-scheme: dark;
+     }
     .btn {
         display: inline-flex;
         align-items: center;
