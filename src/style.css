@@ -51,6 +51,7 @@ body {
         flex-direction: column;
         padding: 28px;
         background-color: var(--surface-color);
+        justify-content: space-between;
     }
 
     .h1 {
