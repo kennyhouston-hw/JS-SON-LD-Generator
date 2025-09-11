@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 authorTypeInput.value = 'Person';
                 const authorNameElement = authorBlock.querySelector('.t531__title');
                 authorNameInput.value = authorNameElement ? authorNameElement.textContent.trim() : '';
-                authorUrlInput.value = ''; // Очищаем URL для Person
+                authorUrlInput.value = 'https://hwschool.online/'; // Устанавливаем URL для Person
             } else {
                 // Блок не найден, устанавливаем автора как Organization
                 authorTypeInput.value = 'Organization';
@@ -262,10 +262,10 @@ document.addEventListener('DOMContentLoaded', () => {
             authorNameInput.value = "Hello World";
             authorUrlInput.value = "https://hwschool.online/";
         } else if (authorTypeInput.value === 'Person') {
-            // При ручном выборе "Person" просто очищаем поля,
-            // т.к. имя нужно вводить вручную, если оно не было определено автоматически.
+            // При ручном выборе "Person" очищаем имя для ручного ввода,
+            // а URL устанавливаем по умолчанию.
             authorNameInput.value = '';
-            authorUrlInput.value = '';
+            authorUrlInput.value = 'https://hwschool.online/';
         }
         updateOverallOutput(); // Обновляем JSON-LD после изменения
     });
