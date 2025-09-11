@@ -227,11 +227,22 @@ document.addEventListener('DOMContentLoaded', () => {
     headlineInput.addEventListener('input', updateOverallOutput);
     descriptionTextarea.addEventListener('input', updateOverallOutput);
     imageInput.addEventListener('input', updateOverallOutput);
-    authorTypeInput.addEventListener('input', updateOverallOutput);
     authorNameInput.addEventListener('input', updateOverallOutput);
     authorUrlInput.addEventListener('input', updateOverallOutput);
     datePublishedInput.addEventListener('input', updateOverallOutput);
     timePublishedInput.addEventListener('input', updateOverallOutput);
+
+    // Управляем полями автора в зависимости от выбора типа
+    authorTypeInput.addEventListener('change', () => {
+        if (authorTypeInput.value === 'Organization') {
+            authorNameInput.value = "Hello World";
+            authorUrlInput.value = "https://hwschool.online/";
+        } else if (authorTypeInput.value === 'Person') {
+            authorNameInput.value = '';
+            authorUrlInput.value = '';
+        }
+        updateOverallOutput(); // Обновляем JSON-LD после изменения
+    });
 
     // Слушатель для кнопки генерации BreadcrumbList
     generateBreadcrumbBtn.addEventListener('click', async () => {
