@@ -19,10 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Устанавливаем текущую дату и время по умолчанию при загрузке страницы
     const now = new Date();
     const today = now.toISOString().split('T')[0]; // YYYY-MM-DD
-    const currentTime = now.toTimeString().split(' ')[0].substring(0, 5); // HH:MM
-
     datePublishedInput.value = today;
-    timePublishedInput.value = currentTime;
+    timePublishedInput.value = '08:00'; // Устанавливаем время по умолчанию 08:00
 
     authorNameInput.value = "Hello World";
     authorUrlInput.value = "https://hwschool.online/";
@@ -189,6 +187,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const metaDescription = doc.querySelector('meta[name="description"]');
             descriptionTextarea.value = metaDescription ? metaDescription.getAttribute('content').trim() : '';
 
+            // --- Логика определения даты публикации ---
+            const dateElement = doc.querySelector('span.date-text.date-icon-calendar');
+            if (dateElement) {
+                const dateText = dateElement.textContent.trim(); // e.g., "14.08.2024"
+                const parts = dateText.split('.');
+                if (parts.length === 3) {
+                    const [day, month, year] = parts;
+                    // Преобразуем формат ДД.ММ.ГГГГ в ГГГГ-ММ-ДД для input[type="date"]
+                    datePublishedInput.value = `${year}-${month}-${day}`;
+                }
+            }
+            // Если элемент не найден, дата останется сегодняшней (установлена по умолчанию).
+
             // --- Логика определения автора ---
             const authorBlock = doc.querySelector('.t531');
             if (authorBlock) {
@@ -196,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 authorTypeInput.value = 'Person';
                 const authorNameElement = authorBlock.querySelector('.t531__title');
                 authorNameInput.value = authorNameElement ? authorNameElement.textContent.trim() : '';
-                authorUrlInput.value = ''; // Очищаем URL для Person
+                authorUrlInput.value = 'https://hwschool.online/'; // Устанавливаем URL для Person
             } else {
                 // Блок не найден, устанавливаем автора как Organization
                 authorTypeInput.value = 'Organization';
@@ -251,10 +262,10 @@ document.addEventListener('DOMContentLoaded', () => {
             authorNameInput.value = "Hello World";
             authorUrlInput.value = "https://hwschool.online/";
         } else if (authorTypeInput.value === 'Person') {
-            // При ручном выборе "Person" просто очищаем поля,
-            // т.к. имя нужно вводить вручную, если оно не было определено автоматически.
+            // При ручном выборе "Person" очищаем имя для ручного ввода,
+            // а URL устанавливаем по умолчанию.
             authorNameInput.value = '';
-            authorUrlInput.value = '';
+            authorUrlInput.value = 'https://hwschool.online/';
         }
         updateOverallOutput(); // Обновляем JSON-LD после изменения
     });
