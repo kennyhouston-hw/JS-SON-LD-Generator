@@ -14,42 +14,25 @@
                         <div class="h1">JSON-LD Gen</div>
                         <span class="subtitle">Вставьте ссылку на страницу, для которой нужно создать разметку, а после заполните недостающие поля</span>
                     </div>
-                    <div class="form-group">
                         <input type="url" id="pageUrl" name="pageUrl" placeholder="URL страницы" required>
-                    </div>
+
                     <div class="form-col">
-                        <div class="form-group">
                             <input type="text" id="headline" name="headline" placeholder="Заголовок статьи" required>
-                        </div>
-                        <div class="form-group">
                             <textarea id="description" name="description" rows="4" placeholder="Описание статьи..." required></textarea>
-                        </div>
-                        <div class="form-group">
                             <input type="url" id="image" name="image" placeholder="URL изображения" required>
-                        </div>
-                        <div class="form-group">
                             <select class="author-select" id="authorType" name="authorType">
                                 <option value="Organization" selected>Organization</option>
                                 <option value="Person">Person</option>
                             </select>
-                        </div>
-                        <div class="form-group">
                             <input type="text" id="authorName" name="authorName" placeholder="Например: Hello World" required>
-                        </div>
-                        <div class="form-group">
                             <input type="url" id="authorUrl" name="authorUrl" placeholder="https://hwschool.online/">
                         </div>
-                    </div>
 
                     <hr>
+                    
                     <div class="form-row">
-                        <div class="form-group">
                             <input type="date" id="datePublished" name="datePublished" required>
-                        </div>
-
-                        <div class="form-group">
                             <input type="time" id="timePublished" name="timePublished" value="09:00" required>
-                        </div>
                     </div>
 
                     <hr>
