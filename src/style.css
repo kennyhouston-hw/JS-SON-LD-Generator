@@ -129,7 +129,7 @@ body {
         min-height: 38px;
     }
 
-   .author-select select {
+   #authorType {
         -moz-appearance:none; 
         -webkit-appearance:none; 
         appearance:none;
