@@ -202,17 +202,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // --- Логика определения автора ---
             const authorBlock = doc.querySelector('.t531');
-            const authorNameNew = doc.querySelector('.auth-name');
+            const authorBlockNew = doc.querySelector('.uc-author-new');
             if (authorBlock) {
                 // Блок найден, устанавливаем автора как Person
                 authorTypeInput.value = 'Person';
                 const authorNameElement = authorBlock.querySelector('.t531__title');
                 authorNameInput.value = authorNameElement ? authorNameElement.textContent.trim() : '';
                 authorUrlInput.value = 'https://hwschool.online/'; // Устанавливаем URL для Person
-            } else if (authorNameNew) {
+            } else if (authorBlockNew) {
                 // Найден новый блок автора, устанавливаем автора как Person
                 authorTypeInput.value = 'Person';
-                authorNameInput.value = authorNameNew.textContent.trim();
+                const authorNameElement = authorBlockNew.querySelector('.auth-name');
+                authorNameInput.value = authorNameElement ? authorNameElement.textContent.trim() : '';
                 authorUrlInput.value = 'https://hwschool.online/'; // Устанавливаем URL для Person
             } else {
                 // Блок не найден, устанавливаем автора как Organization
